@@ -33,7 +33,7 @@ This tutorial walks through building department‑scoped network file shares in 
 
 <h2>Deployment and Configuration Steps</h2>
 
-## Step 1: Creating a new Organizational Unit
+## Step 1: Create AD Security Group 
 - We are going to make a new OU for the Accounting department called **ACCOUNTANTS**
 - Log into your domain controller machine as a Domain Admin
 - Open up the **Active Directory Users and Computers** window
@@ -62,7 +62,7 @@ This tutorial walks through building department‑scoped network file shares in 
 ---------
 
 
-## Step 1: Create folders in C:\ drive
+## Step 1: Create Folders 
 
 - Log into your Domain Controller (**DC-1**) as a domain admin.
 - Open up File Explorer
@@ -71,7 +71,7 @@ This tutorial walks through building department‑scoped network file shares in 
 
 <img width="511" height="95" alt="Screenshot 2025-09-25 at 6 14 10 PM" src="https://github.com/user-attachments/assets/beb39bd2-784c-412a-9ad7-301d627580c6" />
 
-## Step 2: Assigning Permissions to Shared Folders
+## Step 2: Apply Share/NTFS Permissions to Folders
 
 - Next we are going to assign the proper permissions to each folder we just created.
 - Let's assign permissions to **read-access**
@@ -173,7 +173,7 @@ This tutorial walks through building department‑scoped network file shares in 
   - bob.min cannot access this folder since he is not a member of the ACCOUNTANTS group.
   - Let's make Bob a member of the ACCOUNTANTS group
 
-## Step 5: Adding a user to a Group
+## Step 5: Updating Group Membership for the User
 
 - Log bob.min out of the client machine for now
 - Log onto the Domain Controller as a Domain Admin
@@ -189,7 +189,7 @@ This tutorial walks through building department‑scoped network file shares in 
 
 <img width="396" height="444" alt="Screenshot 2025-09-25 at 7 31 02 PM" src="https://github.com/user-attachments/assets/b71edc07-e349-4be8-83de-11376d38c784" />
 
-## Step 6: Testing Permissions After Adding Group Membership to User
+## Step 6: Re-testing Folder Access After Adding User to Security Group
 
 - Navigate to the File Explorer
 - type \\dc-1 in the file explorer search bar
@@ -207,8 +207,6 @@ This tutorial walks through building department‑scoped network file shares in 
 - bob.min was able to successfully use the **read/write** permissions for the accounting folder
 
 
-
-
 ## Summary:
 
 - Built domain‑based file sharing on Windows Server with least‑privilege access across four shares (read, write, no‑access, department‑only).
@@ -219,16 +217,5 @@ This tutorial walks through building department‑scoped network file shares in 
 
 - Demonstrated client access over UNC (\\dc-1) and verified permission outcomes (deny, read‑only, read/write).
 
-- Showcased group membership change propagation by adding a user to ACCOUNTANTS and re‑testing access successfully.
-
-
-
-
-
-
-
-
-
-
-
+- Verified that group membership changes take effect by re-testing folder access after adding a user.
 
