@@ -59,10 +59,8 @@ This tutorial walks through building department‑scoped network file shares in 
 
 <img width="605" height="436" alt="Screenshot 2025-09-25 at 7 09 00 PM" src="https://github.com/user-attachments/assets/27adf425-95ad-492e-a393-331d69704e91" />
 
----------
 
-
-## Step 1: Create Folders 
+## Step 2: Create Folders 
 
 - Log into your Domain Controller (**DC-1**) as a domain admin.
 - Open up File Explorer
@@ -71,7 +69,7 @@ This tutorial walks through building department‑scoped network file shares in 
 
 <img width="511" height="95" alt="Screenshot 2025-09-25 at 6 14 10 PM" src="https://github.com/user-attachments/assets/beb39bd2-784c-412a-9ad7-301d627580c6" />
 
-## Step 2: Apply Share/NTFS Permissions to Folders
+## Step 3: Apply Share/NTFS Permissions to Folders
 
 - Next we are going to assign the proper permissions to each folder we just created.
 - Let's assign permissions to **read-access**
@@ -127,7 +125,7 @@ This tutorial walks through building department‑scoped network file shares in 
 
 <img width="605" height="436" alt="Screenshot 2025-09-25 at 7 09 00 PM" src="https://github.com/user-attachments/assets/27adf425-95ad-492e-a393-331d69704e91" />
 
-## Step 3: Domain User - Navigating to the Shared Network Resources
+## Step 4: Domain User - Navigating to the Shared Network Resources
 
 - Log into the client machine as bob.min (our domain user)
 - Navigate to File Explorer
@@ -141,7 +139,7 @@ This tutorial walks through building department‑scoped network file shares in 
   
 <img width="708" height="117" alt="Screenshot 2025-09-25 at 7 22 20 PM" src="https://github.com/user-attachments/assets/95bb1db5-056e-4a77-96de-6fcd8249bfc9" />
 
-## Step 4: Testing Permissions as Domain User
+## Step 5: Testing Permissions as Domain User
 - bob.min is a member of **Domain Users**
 - We are going to test bob.min's permissions inside of each folder
 
@@ -173,7 +171,7 @@ This tutorial walks through building department‑scoped network file shares in 
   - bob.min cannot access this folder since he is not a member of the ACCOUNTANTS group.
   - Let's make Bob a member of the ACCOUNTANTS group
 
-## Step 5: Updating Group Membership for the User
+## Step 6: Updating Group Membership for the User
 
 - Log bob.min out of the client machine for now
 - Log onto the Domain Controller as a Domain Admin
@@ -189,7 +187,7 @@ This tutorial walks through building department‑scoped network file shares in 
 
 <img width="396" height="444" alt="Screenshot 2025-09-25 at 7 31 02 PM" src="https://github.com/user-attachments/assets/b71edc07-e349-4be8-83de-11376d38c784" />
 
-## Step 6: Re-testing Folder Access After Adding User to Security Group
+## Step 7: Re-testing Folder Access After Adding User to Security Group
 
 - Navigate to the File Explorer
 - type \\dc-1 in the file explorer search bar
