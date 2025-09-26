@@ -22,11 +22,11 @@ This tutorial walks through building department‑scoped network file shares in 
 - Create new AD Security Group named ACCOUNTANTS
 
 - Set the following permissions on each folder:
-  - Grant Domain Users = Read on read-access.
-  - Grant Domain Users = Read/Write on write-access.
-  - Grant Domain Admins = Read/Write on no-access.
-  - Grant ACCOUNTANTS = Read/Write on accounting.
-  - Test permissions for each folder
+  - Grant Domain Users = **Read** on read-access.
+  - Grant Domain Users = **Read/Write** on write-access.
+  - Grant Domain Admins = **Read/Write** on no-access.
+  - Grant ACCOUNTANTS = **Read/Write** on accounting.
+- Test permissions for each folder
 
 - Add the user to Security Group ACCOUNTANTS and re‑test access to \\dc-1\accounting to confirm group‑based authorization.
 
