@@ -1,12 +1,14 @@
-<img width="708" height="117" alt="Screenshot 2025-09-25 at 7 22 20 PM" src="https://github.com/user-attachments/assets/5a7cd488-65c8-4af8-894a-dabad0d3ac7d" />This tutorial : fill out later
+This tutorial walks through building department‑scoped network file shares in an AD domain using Share & NTFS permissions and group‑based access (RBAC). You’ll create the shares, configure a department security group, validate client access via \\dc-1, and prove access changes by updating group membership. 
 
 <h1>Network File Shares and Permissions</h1>
 
 <h2>Environments and Technologies Used</h2>
 
-- item 1
-- item 2
-- item 3
+- Active Directory Domain Services
+- Windows File Sharing
+- NTFS Permissions
+- Security Groups
+- Admin Tools
 
 <h2>Operating Systems Used </h2>
 
@@ -14,6 +16,20 @@
 - Windows 10 (22H2)
 
 <h2>High-Level Deployment and Configuration Steps</h2>
+
+- Create folders for network sharing: read-access, write-access, no-access, and accounting.
+
+- Create new AD Security Group named ACCOUNTANTS
+
+- Set the following permissions on each folder:
+  - Grant Domain Users = Read on read-access.
+  - Grant Domain Users = Read/Write on write-access.
+  - Grant Domain Admins = Read/Write on no-access.
+  - Grant ACCOUNTANTS = Read/Write on accounting.
+  - Test permissions for each folder
+
+- Add the user to Security Group ACCOUNTANTS and re‑test access to \\dc-1\accounting to confirm group‑based authorization.
+
 
 <h2>Deployment and Configuration Steps</h2>
 
@@ -193,7 +209,17 @@
 
 
 
+## Summary:
 
+- Built domain‑based file sharing on Windows Server with least‑privilege access across four shares (read, write, no‑access, department‑only).
+
+- Modeled role‑based access control (RBAC) using an AD Security/Global group (ACCOUNTANTS) instead of per‑user permissions.
+
+- Applied and validated Share & NTFS permissions to enforce read vs. modify behaviors.
+
+- Demonstrated client access over UNC (\\dc-1) and verified permission outcomes (deny, read‑only, read/write).
+
+- Showcased group membership change propagation by adding a user to ACCOUNTANTS and re‑testing access successfully.
 
 
 
